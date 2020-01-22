@@ -5,10 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import React from "react"
 import Header from "./header"
 import "./layout.css"
 
@@ -34,7 +33,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <main className="tw-bg-blue-300">{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

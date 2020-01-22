@@ -21,6 +21,7 @@ module.exports = {
         name: `assets`,
       },
     },
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
