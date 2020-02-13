@@ -2,8 +2,20 @@ module.exports = {
   siteMetadata: {
     title: `Fred Hawk Site`,
     description: `My site`,
-    author: `@fredhawk`,
-    siteUrl: `https://example.com/`,
+    author: `Fred Hawk`,
+    siteUrl: `https://fredhawk.com`,
+    navLinks: [
+      {
+        src: `/`,
+        title: `Home`,
+      },
+      { src: `/blog/`, title: `Blog` },
+      { src: `/projects/`, title: `Projects` },
+      {
+        src: `/contact/`,
+        title: `Contact`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
