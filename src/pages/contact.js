@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <div className="mx-auto max-w-xs py-24 sm:py-48 lg:py-64">
+      <div className="mx-auto max-w-xs py-24">
         <form
           name="contact"
           method="post"
@@ -54,34 +54,34 @@ export default function Contact() {
           <div className="mb-4">
             <label className="block text-gray-700 text-md font-bold mb-2">
               Your name:
-              <input
-                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                type="text"
-                name="name"
-                onChange={handleChange}
-              />
             </label>
+            <input
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="name"
+              onChange={handleChange}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 text-md font-bold mb-2">
               Your email:
-              <input
-                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                type="email"
-                name="email"
-                onChange={handleChange}
-              />
             </label>
+            <input
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="email"
+              name="email"
+              onChange={handleChange}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 text-md font-bold mb-2">
               Message:
-              <textarea
-                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                name="message"
-                onChange={handleChange}
-              />
             </label>
+            <textarea
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              name="message"
+              onChange={handleChange}
+            />
           </div>
           <div>
             <button
