@@ -1,37 +1,98 @@
+import { navigate } from "gatsby-link"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Contact" />
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
-    <form name="contact" method="post">
-      <input type="hidden" name="form-name" value="contact" />
-      <p>
-        <label>
-          Your Name: <input type="text" name="name" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Email: <input type="email" name="email" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Message: <textarea name="message"></textarea>
-        </label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-    </form>
-  </Layout>
-)
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 
-export default IndexPage
+export default function Contact() {
+  const [state, setState] = React.useState({})
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
+  }
+
+  return (
+    <Layout>
+      <SEO title="Contact" />
+      <div className="mx-auto max-w-xs py-24 sm:py-48 lg:py-64">
+        <form
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out:{" "}
+              <input name="bot-field" onChange={handleChange} />
+            </label>
+          </p>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-md font-bold mb-2">
+              Your name:
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text"
+                name="name"
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="mb-6">
+            <label className="block text-gray-700 text-md font-bold mb-2">
+              Your email:
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                type="email"
+                name="email"
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="mb-6">
+            <label className="block text-gray-700 text-md font-bold mb-2">
+              Message:
+              <textarea
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                name="message"
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </Layout>
+  )
+}
