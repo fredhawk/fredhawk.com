@@ -8,7 +8,9 @@ export const Signature = () => {
       </div>
       <article>
         <h5>Fredric Hawk</h5>
-        <p className="sign_desc">A bit about me</p>
+        <p className="sign_desc">
+          Front end developer working with React and CSS
+        </p>
       </article>
     </div>
   )
