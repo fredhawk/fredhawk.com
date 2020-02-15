@@ -52,34 +52,46 @@ export default function Contact() {
             </label>
           </p>
           <div className="mb-4">
-            <label className="block text-gray-700 text-md font-bold mb-2">
+            <label
+              htmlfor="name"
+              className="block text-gray-700 text-md font-bold mb-2"
+            >
               Your name:
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
+              id="name"
               name="name"
               onChange={handleChange}
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-md font-bold mb-2">
+            <label
+              htmlFor="email"
+              className="block text-gray-700 text-md font-bold mb-2"
+            >
               Your email:
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
+              id="email"
               name="email"
               onChange={handleChange}
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-md font-bold mb-2">
+            <label
+              htmlFor="message"
+              className="block text-gray-700 text-md font-bold mb-2"
+            >
               Message:
             </label>
             <textarea
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               name="message"
+              id="message"
               onChange={handleChange}
             />
           </div>
