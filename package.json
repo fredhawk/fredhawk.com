@@ -33,7 +33,7 @@
     "react-typography": "^0.16.19",
     "tailwindcss": "^1.2.0",
     "typography": "^0.16.19",
-    "typography-theme-noriega": "^0.16.19"
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

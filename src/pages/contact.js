@@ -53,7 +53,7 @@ export default function Contact() {
           </p>
           <div className="mb-4">
             <label
-              htmlfor="name"
+              htmlFor="name"
               className="block text-gray-700 text-md font-bold mb-2"
             >
               Your name:
