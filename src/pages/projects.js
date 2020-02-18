@@ -1,16 +1,33 @@
+import { graphql } from "gatsby"
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
+import { ProjectList } from "../components/projectslist"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const SecondPage = ({ data }) => {
+  const projects = data.site.siteMetadata.projects
+  return (
+    <Layout>
+      <SEO title="Projects" />
+      <ProjectList projects={projects} />
+    </Layout>
+  )
+}
 
 export default SecondPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        projects {
+          blogpostlink
+          description
+          imgUrl
+          title
+          url
+        }
+      }
+    }
+  }
+`

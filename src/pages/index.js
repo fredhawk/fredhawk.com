@@ -15,6 +15,8 @@ const IndexPage = ({ data }) => {
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
+      <hr />
+      <br />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (

@@ -16,6 +16,36 @@ module.exports = {
         title: `Contact`,
       },
     ],
+    projects: [
+      {
+        title: `First`,
+        blogpostlink: `link to blogpost`,
+        url: `project page url`,
+        description: `desription`,
+        imgUrl: `https://via.placeholder.com/300`,
+      },
+      {
+        title: `Second`,
+        blogpostlink: `link to blogpost`,
+        url: `project page url`,
+        description: `desription`,
+        imgUrl: `https://via.placeholder.com/300`,
+      },
+      {
+        title: `Third`,
+        blogpostlink: `link to blogpost`,
+        url: `project page url`,
+        description: `desription`,
+        imgUrl: `https://via.placeholder.com/300`,
+      },
+      {
+        title: `Forth`,
+        blogpostlink: `link to blogpost`,
+        url: `project page url`,
+        description: `desription`,
+        imgUrl: `https://via.placeholder.com/300`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
