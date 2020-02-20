@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         navlinks={data.site.siteMetadata.navLinks}
       />
-      <main className="lg:mx-auto lg:max-w-4xl px-4">{children}</main>
+      <main className="lg:mx-auto lg:max-w-3xl px-4 sm:px-6">{children}</main>
       <Footer />
     </div>
   )

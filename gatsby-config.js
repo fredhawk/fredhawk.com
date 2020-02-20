@@ -9,7 +9,7 @@ module.exports = {
         src: `/`,
         title: `Home`,
       },
-      { src: `/blog/`, title: `Blog` },
+      { src: `/writing/`, title: `Writing` },
       { src: `/projects/`, title: `Projects` },
       {
         src: `/contact/`,

@@ -2,7 +2,7 @@
 @tailwind component;
 @tailwind utilities;
 
-footer hr {
+.horizontal-rule {
   border: 0;
   height: 1px;
   background-image: linear-gradient(
@@ -13,7 +13,7 @@ footer hr {
   );
 }
 
-footer hr:after {
+.horizontal-rule:after {
   content: "§";
   display: inline-block;
   position: relative;

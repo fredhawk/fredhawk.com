@@ -12,18 +12,28 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
+        <header className="py-8">
+          <h2 className="text-3xl">Writings</h2>
+          <p>
+            I write about React, CSS, accessibility and webdevelopment in
+            general.
+          </p>
+        </header>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug} className="mb-12">
               <header>
-                <h3>
+                <h3 className="text-xl">
                   <Link to={node.fields.slug}>{title}</Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
+                <small className="text-xs text-gray-600">
+                  {node.frontmatter.date}
+                </small>
               </header>
-              <section>
+              <section className="mb-4">
                 <p
+                  className="text-sm"
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
