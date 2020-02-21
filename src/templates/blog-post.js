@@ -17,28 +17,27 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
-          <header>
-            <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
+          <header className="py-4">
+            <h1 className="text-2xl">{post.frontmatter.title}</h1>
+            <p className="text-sm text-gray-400">{post.frontmatter.date}</p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <MDXRenderer>{post.body}</MDXRenderer>
-          <hr />
         </article>
 
-        <nav>
-          <ul>
+        <nav className="mt-12">
+          <ul className="flex justify-between">
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                  &larr; {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
                 <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                  {next.frontmatter.title} &rarr;
                 </Link>
               )}
             </li>
