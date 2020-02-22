@@ -1,6 +1,5 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import Image from "../components/image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -12,9 +11,6 @@ const IndexPage = ({ data }) => {
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
       <hr />
       <br />
       {posts.map(({ node }) => {
@@ -22,9 +18,9 @@ const IndexPage = ({ data }) => {
         return (
           <article key={node.fields.slug} className="mb-12">
             <header>
-              <h3>
+              <h2>
                 <Link to={node.fields.slug}>{title}</Link>
-              </h3>
+              </h2>
               <small>{node.frontmatter.date}</small>
             </header>
             <section>
