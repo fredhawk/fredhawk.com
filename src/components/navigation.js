@@ -7,7 +7,7 @@ export const Navigation = ({ links, isOpen }) => {
     <nav
       className={`${
         isOpen ? "block " : "hidden"
-      } sm:block px-2 pt-2 pb-4 sm:p-0`}
+      } sm:flex items-center px-2 pt-2 pb-4 sm:p-0`}
     >
       <ul className="sm:flex">
         {links.map(link => (

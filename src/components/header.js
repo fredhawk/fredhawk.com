@@ -12,7 +12,7 @@ const Header = ({ siteTitle, navlinks }) => {
       <div className="lg:mx-auto lg:max-w-screen sm:flex sm:justify-between sm:px-4 sm:py-3 sm:text-center ">
         <div className="flex items-center justify-between px-2 py-3 sm:p-0">
           <div>
-            <h1 className="text-xl px-2 uppercase">
+            <h1 className="text-xl px-2 uppercase logo">
               <Link to="/" className="no-underline">
                 {siteTitle}
               </Link>
