@@ -1,5 +1,6 @@
 import { navigate } from "gatsby-link"
 import React from "react"
+import Leaf from "../../content/assets/leaf.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -34,11 +35,14 @@ export default function Contact() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <div className="mx-auto max-w-xs py-24">
+      <div className="w-32 mx-auto pt-2">
+        <img src={Leaf} alt="Leaf" />
+      </div>
+      <div className="mx-auto max-w-xs py-12">
         <form
           name="contact"
           method="post"
-          action="/thanks/"
+          action="/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}

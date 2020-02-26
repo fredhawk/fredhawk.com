@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import Leaf from "../../content/assets/leaf.svg"
+import Hawk from "../../content/assets/hawk.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -9,8 +9,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="w-32 mx-auto pt-2 pb-4">
-        <img src={Leaf} alt="Leaf" />
+      <div className="w-16 mx-auto pt-2 pb-4">
+        <img src={Hawk} alt="Hawk" />
       </div>
       <div className="articlelist">
         {posts.map(({ node }) => {

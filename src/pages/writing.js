@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
+import Quill from "../../content/assets/quill.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -12,8 +13,11 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Writing" />
+        <div className="w-16 mx-auto pt-2 pb-4">
+          <img src={Quill} alt="Quill" />
+        </div>
         <header className="py-8">
-          <h2 className="text-3xl">Writings</h2>
+          <h2 className="text-3xl text-gray-800">Writings</h2>
           <p>
             I write about React, CSS, accessibility and webdevelopment in
             general.
