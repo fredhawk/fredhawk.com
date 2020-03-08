@@ -13,6 +13,7 @@ const IndexPage = ({ data }) => {
         <img src={Hawk} alt="Hawk" />
       </div>
       <div className="articlelist">
+        <h2 className="text-3xl text-gray-800">Recent Posts</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
