@@ -28,11 +28,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         projects {
-          blogpostlink
-          description
           imgUrl
           title
-          url
+          slug
         }
       }
     }

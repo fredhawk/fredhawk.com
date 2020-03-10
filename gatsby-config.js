@@ -25,6 +25,7 @@ module.exports = {
         The biggest challenge on this project was to set it up with automation on the things I wanted. Setting each up wasn't that difficult but getting them to work together was not straight forward. To solve that issue I used tools like Husky and lint-staged that glued them together and made them work together.`,
         imgUrl: `https://via.placeholder.com/300`,
         techstack: [`Parcel`, `ReactJS`, `Jest`, `Google Books API`],
+        slug: `book-finder`,
       },
       {
         title: `Resume Bears`,
@@ -34,6 +35,7 @@ module.exports = {
         The greatest challenge was to style and export to PDF which we solved through using native CSS printing styles rather than using JavaScript to do it.`,
         imgUrl: `https://via.placeholder.com/300`,
         techstack: [`Vue`, `Vuetify`],
+        slug: `resume-bears`,
       },
       {
         title: `Blue Candlenut`,
@@ -43,6 +45,7 @@ module.exports = {
         Solving how to populate the map with all the pointers and then calculating and building a new list based on distance from where your input coordinates was a challenge.`,
         imgUrl: `https://via.placeholder.com/300`,
         techstack: [`ReactJS`, `Google Maps API`],
+        slug: `blue-candlenut`,
       },
       {
         title: `Budget Bears`,
@@ -62,6 +65,7 @@ module.exports = {
           `Firebase Auth`,
           `Rechars`,
         ],
+        slug: `budget-bears`,
       },
     ],
   },
