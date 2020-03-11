@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import { ProjectList } from "../components/projectslist"
 import SEO from "../components/seo"
 
-const SecondPage = ({ data }) => {
+const Projects = ({ data }) => {
   const projects = data.site.siteMetadata.projects
   return (
     <Layout>
@@ -21,7 +21,7 @@ const SecondPage = ({ data }) => {
   )
 }
 
-export default SecondPage
+export default Projects
 
 export const pageQuery = graphql`
   query {

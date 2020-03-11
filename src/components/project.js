@@ -15,17 +15,19 @@ export const Project = ({ project }) => {
     }
   `)
   return (
-    <>
+    <div className="relative bg-purple-500 w-64 mx-auto hover:scale-110 transform">
       <Link to={`/project/${project.slug}/`}>
-        <div className="w-64 bg-green-500 mx-auto">
+        <div className="">
           <Img
             fluid={data.file.childImageSharp.fluid}
             alt="An astronaut"
             className="w-full"
           />
         </div>
-        <h2>{project.title}</h2>
+        <h2 className="absolute top-0 right-0 mt-10 mr-4 bg-orange-500 p-1 rounded rotate-45 transform">
+          {project.title}
+        </h2>
       </Link>
-    </>
+    </div>
   )
 }

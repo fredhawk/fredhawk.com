@@ -3,7 +3,7 @@ import { Project } from "./project"
 
 export const ProjectList = ({ projects }) => {
   return (
-    <div>
+    <div className="grid project-list">
       {projects.length > 0
         ? projects.map(project => (
             <Project key={`project-${project.title}`} project={project} />
