@@ -8,7 +8,9 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
+    const posts = data.allMdx.edges.filter(
+      edge => edge.node.frontmatter.date !== null
+    )
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
