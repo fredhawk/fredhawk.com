@@ -4,48 +4,46 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.mdx
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+const BlogPostTemplate = props => {
+  const post = props.data.mdx
+  const siteTitle = props.data.site.siteMetadata.title
+  const { previous, next } = props.pageContext
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <article>
-          <header className="py-4">
-            <h1 className="text-2xl">{post.frontmatter.title}</h1>
-            <p className="text-sm text-gray-400">{post.frontmatter.date}</p>
-          </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </article>
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <article>
+        <header className="py-4">
+          <h1 className="text-2xl">{post.frontmatter.title}</h1>
+          <p className="text-sm text-gray-400">{post.frontmatter.date}</p>
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </article>
 
-        <nav className="mt-12">
-          <ul className="flex justify-between">
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  &larr; {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} &rarr;
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
-      </Layout>
-    )
-  }
+      <nav className="mt-12">
+        <ul className="flex justify-between">
+          <li>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                &larr; {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                {next.frontmatter.title} &rarr;
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
+    </Layout>
+  )
 }
 
 export default BlogPostTemplate

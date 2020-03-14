@@ -6,7 +6,19 @@ import { ProjectList } from "../components/projectslist"
 import SEO from "../components/seo"
 
 const Projects = ({ data }) => {
-  const projects = data.site.siteMetadata.projects
+  const projects = data.allMdx.edges.map(edge => {
+    data.allFile.edges.forEach(imgedge => {
+      if (
+        edge.node.frontmatter.imgUrl ===
+        imgedge.node.childImageSharp.fluid.originalName
+      ) {
+        edge.node.frontmatter["imagedata"] = imgedge.node.childImageSharp
+        return edge
+      }
+    })
+    return edge
+  })
+
   return (
     <Layout>
       <SEO title="Projects" />
@@ -27,10 +39,32 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        projects {
-          imgUrl
-          title
-          slug
+        title
+      }
+    }
+    allMdx(filter: { frontmatter: { type: { eq: "Project" } } }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            imgUrl
+            title
+          }
+        }
+      }
+    }
+    allFile(filter: { sourceInstanceName: { eq: "projectimages" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 400, maxHeight: 300) {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
+          }
         }
       }
     }
