@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
@@ -30,6 +30,24 @@ const ProjectTemplate = props => {
         <a href={project.frontmatter.url}>Demo</a>
         <a href={project.frontmatter.githublink}>Github</a>
       </div>
+      <nav className="mt-12">
+        <ul className="flex justify-between">
+          <li>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                &larr; {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                {next.frontmatter.title} &rarr;
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
     </Layout>
   )
 }
