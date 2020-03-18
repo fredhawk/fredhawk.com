@@ -11,24 +11,35 @@ const ProjectTemplate = props => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <div className="w-64 bg-green-500 mx-auto">
+      <div className="w-64 mx-auto mb-8">
         <Img
           fluid={props.data.file.childImageSharp.fluid}
           alt="An astronaut"
           className="w-full"
         />
       </div>
-      <h2>{project.frontmatter.title}</h2>
-      <section dangerouslySetInnerHTML={{ __html: project.html }} />
-      <MDXRenderer>{project.body}</MDXRenderer>
-      <ul>
-        {project.frontmatter.techstack.map(tech => (
-          <li key={tech}>{tech}</li>
-        ))}
-      </ul>
-      <div className="flex justify-around items-center">
-        <a href={project.frontmatter.url}>Demo</a>
-        <a href={project.frontmatter.githublink}>Github</a>
+      <div>
+        <h2 className="text-xl mb-4">{project.frontmatter.title}</h2>
+        <div className="mb-8">
+          <section dangerouslySetInnerHTML={{ __html: project.html }} />
+          <MDXRenderer>{project.body}</MDXRenderer>
+        </div>
+        <ul className="flex items-center mb-8 flex-wrap">
+          {project.frontmatter.techstack.map(tech => (
+            <li
+              key={tech}
+              className="p-1 text-xs bg-blue-700 mx-2 rounded text-white first:ml-0"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
+        <div className="flex items-center">
+          <a href={project.frontmatter.url}>Demo</a>
+          <a href={project.frontmatter.githublink} className="ml-4">
+            Github
+          </a>
+        </div>
       </div>
       <nav className="mt-12">
         <ul className="flex justify-between">
