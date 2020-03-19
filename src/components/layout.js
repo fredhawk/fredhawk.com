@@ -28,12 +28,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="site">
+    <div className="flex flex-col min-h-screen">
       <Header
         siteTitle={data.site.siteMetadata.title}
         navlinks={data.site.siteMetadata.navLinks}
       />
-      <main className="lg:mx-auto lg:max-w-3xl px-4 sm:px-6">{children}</main>
+      <main className="lg:mx-auto lg:max-w-3xl px-4 sm:px-6 flex-grow">
+        {children}
+      </main>
       <Footer />
     </div>
   )
