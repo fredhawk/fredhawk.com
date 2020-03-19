@@ -137,6 +137,7 @@ module.exports = {
         ],
       },
     },
+    `@pauliescanlon/gatsby-mdx-embed`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
