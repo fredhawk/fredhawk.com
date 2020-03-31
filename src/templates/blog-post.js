@@ -20,7 +20,6 @@ const BlogPostTemplate = props => {
           <h1 className="text-2xl">{post.frontmatter.title}</h1>
           <p className="text-sm text-gray-400">{post.frontmatter.date}</p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <MDXRenderer>{post.body}</MDXRenderer>
       </article>
 
@@ -61,7 +60,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY MMMM DD")
         description
       }
     }
