@@ -42,7 +42,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(filter: { frontmatter: { type: { eq: "Project" } } }) {
+    allMdx(
+      filter: {
+        frontmatter: { type: { eq: "Project" }, published: { eq: true } }
+      }
+    ) {
       edges {
         node {
           excerpt

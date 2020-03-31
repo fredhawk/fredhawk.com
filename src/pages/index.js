@@ -49,7 +49,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      filter: { frontmatter: { type: { eq: "Post" } } }
+      filter: { frontmatter: { type: { eq: "Post" }, published: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
