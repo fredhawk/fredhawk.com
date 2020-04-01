@@ -15,7 +15,7 @@ const BlogIndex = props => {
       <div className="w-16 mx-auto pt-2 pb-4">
         <img src={Quill} alt="Quill" />
       </div>
-      <header className="py-8">
+      <header className="py-8 mb-6">
         <h2 className="text-3xl text-gray-800">Writings</h2>
         <p>
           I write about React, CSS, accessibility and webdevelopment in general.
@@ -26,7 +26,7 @@ const BlogIndex = props => {
         return (
           <article key={node.fields.slug} className="mb-12">
             <header>
-              <h3 className="text-xl">
+              <h3 className="text-lg">
                 <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <small className="text-xs text-gray-600">

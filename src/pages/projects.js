@@ -25,7 +25,7 @@ const Projects = ({ data }) => {
       <div className="w-32 mx-auto pt-2 pb-4">
         <img src={Lion} alt="Lion" />
       </div>
-      <header className="py-8">
+      <header className="py-8 mb-6">
         <h2 className="text-3xl text-gray-800">Projects</h2>
       </header>
       <ProjectList projects={projects} />

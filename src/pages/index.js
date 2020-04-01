@@ -13,19 +13,22 @@ const IndexPage = ({ data }) => {
         <img src={Hawk} alt="Hawk" />
       </div>
       <div className="articlelist">
-        <h2 className="text-3xl text-gray-800">Recent Posts</h2>
+        <h2 className="text-3xl text-gray-800 mb-6 py-8">Recent Posts</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug} className="mb-12">
               <header>
-                <h2>
+                <h3 className="text-lg">
                   <Link to={node.fields.slug}>{title}</Link>
-                </h2>
-                <small>{node.frontmatter.date}</small>
+                </h3>
+                <small className="text-xs text-gray-600">
+                  {node.frontmatter.date}
+                </small>
               </header>
               <section>
                 <p
+                  className="text-sm"
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
