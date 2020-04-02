@@ -5,17 +5,17 @@ import React from "react"
 const components = {
   wrapper: ({ children }) => <>{children}</>,
   h2: props => (
-    <h2 className="mb-8 text-lg text-green-600" {...props}>
+    <h2 className="mb-8 text-lg text-gray-800" {...props}>
       {props.children}
     </h2>
   ),
   h3: props => (
-    <h3 className="mb-6 text-md" {...props}>
+    <h3 className="mb-6 text-md text-gray-700" {...props}>
       {props.children}
     </h3>
   ),
   p: props => (
-    <p className="mb-4 leading-relaxed text-sm" {...props}>
+    <p className="mb-4 leading-relaxed text-sm text-gray-800" {...props}>
       {props.children}
     </p>
   ),

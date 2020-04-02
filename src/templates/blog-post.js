@@ -17,7 +17,7 @@ const BlogPostTemplate = props => {
       />
       <article>
         <header className="py-4">
-          <h1 className="text-2xl">{post.frontmatter.title}</h1>
+          <h1 className="text-2xl text-gray-900">{post.frontmatter.title}</h1>
           <p className="text-sm text-gray-400">{post.frontmatter.date}</p>
         </header>
         <MDXRenderer>{post.body}</MDXRenderer>

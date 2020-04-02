@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
           return (
             <article key={node.fields.slug} className="mb-12">
               <header>
-                <h3 className="text-lg">
+                <h3 className="text-lg text-gray-800">
                   <Link to={node.fields.slug}>{title}</Link>
                 </h3>
                 <small className="text-xs text-gray-600">
