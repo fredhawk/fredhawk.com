@@ -94,20 +94,21 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
+                  filter: { frontmatter: { type: { eq: "Post" }, published: { eq: true } } },
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
                   edges {
@@ -126,6 +127,7 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Fred Hawk's RSS Feed",
+            site_url: `https://fredhawk.com`,
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
