@@ -19,6 +19,15 @@ const components = {
       {props.children}
     </p>
   ),
+
+  blockquote: props => (
+    <blockquote
+      className="mb-4 leading-relaxed text-sm bg-gray-200 py-3"
+      {...props}
+    >
+      {props.children}
+    </blockquote>
+  ),
 }
 
 export const wrapRootElement = ({ element }) => {
