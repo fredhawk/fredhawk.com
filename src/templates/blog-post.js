@@ -14,6 +14,7 @@ const BlogPostTemplate = props => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        pathname={props.location.pathname}
       />
       <article>
         <header className="py-4">
@@ -52,6 +53,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {
