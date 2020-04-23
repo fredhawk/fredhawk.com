@@ -8,7 +8,7 @@ const Header = ({ siteTitle, navlinks }) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <header className="w-full mb-4">
+    <header className="mb-4">
       <div className="lg:mx-auto lg:max-w-screen sm:flex sm:justify-between sm:px-4 sm:py-3 sm:text-center ">
         <div className="flex items-center justify-between px-2 py-3 sm:p-0">
           <div>

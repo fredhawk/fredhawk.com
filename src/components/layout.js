@@ -28,12 +28,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="container max-w-screen-xl mx-auto px-4 flex flex-col min-h-screen">
       <Header
         siteTitle={data.site.siteMetadata.title}
         navlinks={data.site.siteMetadata.navLinks}
       />
-      <main className="container mx-auto w-full lg:max-w-3xl px-4 sm:px-6 flex-grow">
+      <main className="container mx-auto w-full lg:max-w-screen-xl px-4 sm:px-6 flex-grow">
         {children}
       </main>
       <Footer />
