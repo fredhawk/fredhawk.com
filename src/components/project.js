@@ -4,7 +4,10 @@ import React from "react"
 
 export const Project = ({ project }) => {
   return (
-    <div className="border rounded relative bg-purple-500 w-64 mx-auto hover:scale-110 transform">
+    <div
+      data-testid="project"
+      className="border rounded relative bg-purple-500 w-64 mx-auto hover:scale-110 transform"
+    >
       <Link to={project.fields.slug}>
         <div className="">
           <Img

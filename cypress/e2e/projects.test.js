@@ -5,6 +5,9 @@ describe("Project Page", () => {
     cy.visit("/projects/")
   })
   it("Navigate to Projects page and check", () => {
-    cy.findByText(/first/i).should("exist")
+    cy.findAllByText(/projects/i).should("exist")
+  })
+  it("Find four projects listed", () => {
+    cy.findAllByTestId("project").should("be", 4)
   })
 })

@@ -5,6 +5,6 @@ describe("Writing Page", () => {
     cy.visit("/writing/")
   })
   it("Navigate to Writing page and check", () => {
-    cy.findByText(/writings/i).should("exist")
+    cy.findAllByText(/writings/i).should("exist")
   })
 })
