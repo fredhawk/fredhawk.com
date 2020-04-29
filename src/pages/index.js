@@ -17,7 +17,11 @@ const IndexPage = ({ data }) => {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug} className="mb-12">
+            <article
+              data-testid="post"
+              key={node.fields.slug}
+              className="mb-12"
+            >
               <header>
                 <h3 className="text-lg text-gray-800">
                   <Link to={node.fields.slug}>{title}</Link>
