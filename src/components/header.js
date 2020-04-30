@@ -22,9 +22,14 @@ const Header = ({ siteTitle, navlinks }) => {
             <button
               type="button"
               className=""
+              aria-label="Open the menu"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <MdClose size="24px" /> : <MdMenu size="24px" />}
+              {isOpen ? (
+                <MdClose size="24px" aria-hidden />
+              ) : (
+                <MdMenu size="24px" aria-hidden />
+              )}
             </button>
           </div>
         </div>
