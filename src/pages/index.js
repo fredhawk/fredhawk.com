@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
                 <h3 className="text-lg text-gray-800">
                   <Link to={node.fields.slug}>{title}</Link>
                 </h3>
-                <small className="text-xs text-gray-600">
+                <small className="text-xs text-gray-700">
                   {node.frontmatter.date}
                 </small>
               </header>
