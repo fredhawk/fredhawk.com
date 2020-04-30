@@ -19,7 +19,7 @@ const BlogPostTemplate = props => {
       <article>
         <header className="py-4">
           <h1 className="text-2xl text-gray-900">{post.frontmatter.title}</h1>
-          <p className="text-sm text-gray-400">{post.frontmatter.date}</p>
+          <p className="text-sm text-gray-700">{post.frontmatter.date}</p>
           {post.frontmatter.tags.map(tag => (
             <span className="mr-2 text-xs bg-blue-300 px-2 py-1 rounded text-blue-900">
               {tag}
