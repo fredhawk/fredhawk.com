@@ -6,7 +6,7 @@ export const Project = ({ project }) => {
   return (
     <div
       data-testid="project"
-      className="border rounded relative bg-purple-500 w-64 mx-auto hover:scale-110 transform"
+      className="border rounded relative w-64 mx-auto hover:scale-110 transform"
     >
       <Link to={project.fields.slug}>
         <div className="">
