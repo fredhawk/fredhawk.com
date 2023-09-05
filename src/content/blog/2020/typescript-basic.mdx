@@ -1,0 +1,268 @@
+---
+title: "TypeScript beginnings"
+description: "My first venture into the world of TypeScript. So far I like it."
+heroImage: "/placeholder-hero.jpg"
+pubDate: "May 17 2020"
+type: "Post"
+tags: ["TypeScript"]
+published: true
+---
+
+### Who is this for?
+
+I'm writing this for me and other beginners. Prior knowledge of JavaScript is good if you want to follow along in this post.
+
+### What is TypeScript?
+
+Typescript is a superset of JavaScript. What does that mean? It means it has all the features of JavaScript and some extras.
+
+Extras like types and it implements upcoming features that are coming to JavaScript before it arrives. So you can use future features now. It uses the extension .ts. It compiles down to regular JavaScript.
+
+But the big thing is it adds types to JavaScript which otherwise doesn't have it.
+
+### Why use it?
+
+For me personally it gives me more confidence in my code. The same way testing does but different.
+
+### How to get started
+
+First you will need to install TypeScript on your computer via the command line.
+
+```bash
+npm install -g typescript
+```
+
+Create a typescript file. Something like add.ts
+
+```ts
+function add(a, b) {
+  return a + b
+}
+
+add(1, 2)
+```
+
+Then you would compile the code in the TypeScript file to a JavaScript file.
+
+```bash
+tsc add.ts
+```
+
+Run that in the command line to compile it.
+
+It doesn't look much different from a regular JavaScript file and it isn't. We haven't added types yet.
+
+### What are types
+
+Types are a way to describe what kind of parameters you should expect your code to use. These can be simple primitive types or more complex custom types. In the form of interfaces.
+
+In JavaScript, you also have primitives like strings, numbers and boolean for example. You have the same ones in TypeScript but you can also create your own types in TypeScript.
+
+For example, you can say that a variable is an object which has certain properties. You then declare what type each property is ahead of time. So the TypeScript compiler can give you and error if you provide a value of the wrong type.
+
+```ts
+function add (a: number, b:number): number => {
+  return a + b
+}
+
+add(4, 6) // Gives 10
+add(4, "red") // Gives an error as it expects both arguments to be numbers.
+```
+
+It checks the input that it matches what the function expects the types to be. If then "b" for example was a string in this case, then the compiler will give an error.
+
+### Which types are there?
+
+- Number
+- String
+- Boolean
+- Symbol
+- Array[]
+- Function
+- Object
+
+Function and object splits into their parts. Such as what the different values are in the parameters to the function and what it returns. Or the properties of the object.
+
+### Annotation vs inference
+
+You can choose to annotate what type each variable should be or you can let TypeScript infer the type. That means that TypeScript decides the type based on the function you use it in. For example, the add function before. Since the function has to return a number. And it adds up the two values it stands to reason that both has to be numbers. Otherwise, the function cannot return a number.
+
+It is better to let TypeScript infer as much as possible as it saves time and energy on the programmers part. In such a simple example as above it is better to let the system do the work for you. That way you can put your effort on more complex situations.
+
+### Types from Definitely typed
+
+When you add packages to your project sometimes they don't come with types. Often you can find types that the community has written for them at a place called [Definitely typed](https://definitelytyped.org/). Most of the time you can install the types by doing "npm install @types/packagename". But sometimes you will have to go check if there are types and the name of the package on the site.
+
+### What are interfaces?
+
+I compare interfaces to describing the shape of your data. For instance, you have an object with properties. Then you can describe that object through an interface.
+
+```ts
+interface Person = {
+  firstName: string,
+  lastName: string,
+  age: number,
+  hometown: {
+    lat: number,
+    lng: number,
+  }
+}
+
+const obj = {
+  firstName: "Harry",
+  lastName: "Potter",
+  age: 32,
+  hometown: {
+    lat: 12.4224,
+    lng: 84.2342,
+  }
+}
+
+function getFullName (personObj: Person) {
+  return `${personObj.firstName} ${personObj.lastName}`
+}
+
+const fullName = getFullName(obj)
+```
+
+It tells the getFullName function the shape of the personObj that it will receive. I have found that describing data like this helps my mental model of my program. Especially when it gets more complex.
+
+### What are Enums and when to use them?
+
+Enums are a list of constants that you set up ahead of time. If you have a map where the only directions are up, down, left, right. Then you can create an enum of that list called Direction. Then in a function that takes a direction you type one of the inputs as the enum Direction. That means the input can only be one of those four.
+
+```ts
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+
+function move(direction: Direction): void {
+  point.direction + 1
+}
+
+move(Direction.Up)
+```
+
+This is an example of a string enum but there are other versions of it.
+
+For those of you that have used something like ReduxJS, this is like how you do naming of actions. When using TypeScript you would use an enum instead.
+
+### Classes and TypeScript
+
+Classes in TypeScript are the same as the class syntax in JavaScript. It is like the class based object-oriented programming that many uses in Java or C#. I won't get into explaining it but for further reading please check out [classes in TypeScript.](https://www.typescriptlang.org/docs/handbook/classes.html) It explains classes for both JavaScript and TypeScript.
+
+### Interfaces vs abstract classes
+
+One part of classes in TypeScript that is not in JavaScript are abstract classes.
+
+Abstract classes are base classes that other classes can extend from. You cannot instantiate them.
+
+Interfaces describe what properties and methods you can implement. But doesn't explain how those methods should work.
+
+Abstract classes not only describe what you can implement. But also how the methods should work.
+
+```ts
+interface InterfaceA {
+  method_1(): void
+  method_2(): string
+}
+// vs
+abstract class ClassA {
+  abstract method_1() // a method with no implementation
+  method_2() {
+    // a method with implementation
+    // do something
+  }
+}
+```
+
+### Do you have to use classes?
+
+You can use as much or as little of TypeScripts features as you want. If you do not want to use classes you do not have to.
+
+### What are generics?
+
+Generics are types that you would use when you do not know the type that the function provides. But for example, you do know that the function will return a value of the same type..
+
+Example.
+
+```ts
+function general(item: number): number {
+  return item
+}
+```
+
+What if the function should handle cases where it provides a number or a string and you do not know what it will be?
+
+```ts
+function general(item: number | string): number | string {
+  return item
+}
+```
+
+This would work.
+
+But what about the cases where it needs to be so general that it can accept any type of item?
+
+```ts
+function general(item: any): any {
+  return item
+}
+```
+
+We should avoid any as much as possible. So how would we solve this? With generics.
+
+```ts
+function general<T>(item: T): T {
+  return item
+}
+```
+
+The T in this example represent a generic Type. T for type. It doesn't have to be T, it can be anything but the convention is usually T for Type and K for key.
+
+What &#60;T&#62; means is that when we call the function we decide what type it should be.
+
+### Decorators
+
+Decorators are a more advanced topic than the others and I won't go deep into it. They are for changing functionality of a class, method, accessor, property or parameter.
+
+You will need to set the flag "experimentalDecorators" to true in your tsconfig to use them. They are in a proposal in JavaScript as well at the moment. So an experimental feature still.
+
+They are functions that wrap whatever you are decorating.
+
+Decorators look like this @expression. You write them on the line above what they decorate.
+
+For example:
+
+```ts
+// Decorator function
+function bob() {
+  console.log("my name is bob")
+  return function(target, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log("bob(): called")
+  }
+}
+
+// Decorating the method
+class George {
+  @bob()
+  method() {
+    console.log("my name is George")
+  }
+}
+
+// Calling it
+new George().method()
+
+// Logged in console:
+// my name is bob
+// bob(): called
+// my name is George
+```
+
+This is just one example of how to use decorators. I do not tend to use them, but they give a sense of easy to read about them.
+
+That is all for now.

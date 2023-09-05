@@ -1,0 +1,29 @@
+---
+title: Bookfinder
+description: "A React project to search for books through use of Google Books API."
+url: "https://friendly-bookfinder.netlify.com/"
+githublink: "https://github.com/ozinon/google-book-api"
+heroImage: "../../_assets/bookfinder.png"
+heroAlt: "Bookfinder app"
+type: "project"
+tags: ["Parcel", "ReactJS", "Jest", "Google Books API"]
+published: true
+---
+import { Image } from 'astro:assets';
+import results from '../../_assets/bookfinder_results.png';
+import details from '../../_assets/bookfinder_single.png';
+
+A React project to search for books through use of Google Books API. Project made to settle my own curiosity about Parcel and setting up a project with automated testing, linting and code style upon committing to git.
+
+<div class="w-64 mx-auto my-4 md:float-right md:ml-4 md:mt-5">
+  <Image
+    src={results}
+    alt="Book search results"
+  />
+</div>
+<br />
+The biggest challenge on this project was to set it up with automation on the things I wanted. Setting each up wasn't that difficult but getting them to work together was not straight forward. To solve that issue I used tools like Husky and lint-staged that glued them together and made them work together.
+<div class="w-64 mx-auto my-4 md:float-left md:mt-5">
+  <Image src={details} alt="Book details" />
+</div>
+<div class="clearfix"></div>

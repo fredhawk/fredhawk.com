@@ -1,0 +1,25 @@
+---
+title: "Blue Candlenut"
+description: "Tool to find closest service centers in Norway. Built with React using the Google Maps API."
+url: "https://blue-candlenut.netlify.com/"
+githublink: "https://github.com/ozinon/blue-candlenut"
+heroImage: "../../_assets/blue-candlenut.png"
+heroAlt: "Google Maps API"
+type: "project"
+tags: ["ReactJS", "Google Maps API"]
+published: true
+---
+import { Image } from 'astro:assets';
+import search from '../../_assets/blue_candlenut_searched.png';
+
+A tool to find closest service centers in Norway. Built with React using the Google Maps API.
+
+<div class="w-64 mx-auto my-4 md:float-right md:ml-4 md:mt-5">
+  <Image
+    src={search}
+    alt="Sevice center list"
+  />
+</div>
+<br />
+Solving how to populate the map with all the pointers and then calculating and building a new list based on distance from where your input coordinates was a challenge.
+<div class="clearfix"></div>

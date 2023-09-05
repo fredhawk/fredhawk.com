@@ -1,0 +1,31 @@
+---
+title: "Resume Bears"
+description: "A tool to easily edit and build upon for a resume using Vue and Vuetify."
+url: "https://resume-bears.netlify.com/"
+githublink: "https://github.com/chingu-voyages/v8-bears-team-17"
+heroImage: "../../_assets/resume-bears.jpg"
+heroAlt: "Resume app"
+type: "project"
+tags: ["Vue", "Vuetify"]
+published: true
+---
+import { Image } from 'astro:assets';
+import form from '../../_assets/resume-bears_form.png';
+import template from '../../_assets/resume-bears_template.png';
+
+A tool to easily edit and build upon for a resume using Vue and Vuetify. Inspired by and works with jsonresume.org. Trying out Vue for the first time was fun.
+
+<div class="w-64 mx-auto my-4 md:float-right md:ml-4 md:mt-0">
+  <Image src={form} alt="Resume form" />
+</div>
+<br />
+The greatest challenge was to style and export to PDF which we solved through using native CSS printing styles rather than using JavaScript to do it.
+<br />
+<div class="w-64 mx-auto my-4 md:float-left md:mt-12">
+  <Image
+    src={template}
+    alt="PDF template"
+  />
+</div>
+<br />
+<div class="clearfix"></div>

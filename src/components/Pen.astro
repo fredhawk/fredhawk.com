@@ -1,0 +1,19 @@
+---
+const { slug, user, penTitle, height = "300", tabs = "html,result", editable = "false", clickToLoad = "false" } = Astro.props
+const penURL = `https://codepen.io/ozinon/pen/${slug}`
+const userURL = `https://codepen.io/${user}`
+---
+
+ <p class="codepen" 
+	 data-height={height} 
+	 data-default-tab={tabs} 
+	 data-slug-hash={slug} 
+	 data-editable={editable} 
+	 data-preview={clickToLoad} 
+	 data-user={user}>
+	 <span>See the Pen <a href={penURL}>{penTitle}</a> 
+		by Fred Hawk (<a href={userURL}>@ozinon</a>) 
+		on <a href="https://codepen.io">CodePen</a>.
+	</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>

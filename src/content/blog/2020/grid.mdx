@@ -1,0 +1,35 @@
+---
+title: "Responsive grid with images or cards"
+pubDate: "Feb 24 2020"
+description: "How to easily make a responsive grid with either images or cards."
+heroImage: "/placeholder-hero.jpg"
+type: "Post"
+tags: ["CSS", "HTML"]
+published: true
+---
+
+import Pen from '../../../components/Pen.astro';
+
+<div class="w-4/5 mx-auto">
+  <img
+    src="../../assets/cssgrid_example.gif"
+    alt="CSS Grid Example"
+    class="w-full"
+  />
+</div>
+
+The magic to make it act that way is the two css lines below.
+
+```css
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+```
+
+<br />
+
+Put this on the parent container and this will give you a responsive grid that adapts the columns with the size of the container.
+
+<br />
+Here is the whole code example to check out.
+
+<Pen user="ozinon" slug="rNVradR" penTitle="Responsive grid" />
