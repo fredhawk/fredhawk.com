@@ -7,16 +7,11 @@ type: "Post"
 tags: ["CSS", "HTML"]
 published: true
 ---
-
+import { Image } from 'astro:assets';
 import Pen from '../../../components/Pen.astro';
+import grid from '../../_assets/cssgrid_example.gif'
 
-<div class="w-4/5 mx-auto">
-  <img
-    src="../../assets/cssgrid_example.gif"
-    alt="CSS Grid Example"
-    class="w-full"
-  />
-</div>
+<Image src={grid} alt="CSS Grid Example" />
 
 The magic to make it act that way is the two css lines below.
 
