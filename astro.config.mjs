@@ -5,11 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	// experimental: {
-	// 	assets: true,
-	// 	viewTransitions: true
-	// },
-	site: 'https://example.com',
+	site: 'https://fredhawk.com',
 	integrations: [mdx(), sitemap()],
 	markdown: {
 		shikiConfig: {
