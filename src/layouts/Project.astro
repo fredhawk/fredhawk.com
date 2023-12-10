@@ -7,7 +7,7 @@ import Footer from '../components/Footer.astro';
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, description, heroImage, heroAlt } = Astro.props;
+const { title, description, heroImage, heroAlt, tags, url, githublink } = Astro.props;
 ---
 
 <html lang="en">
@@ -36,6 +36,14 @@ const { title, description, heroImage, heroAlt } = Astro.props;
 				<h1 class="title">{title}</h1>
 				<hr />
 				<slot />
+				<hr />
+				<ul>
+				{tags.map((tag) => (
+					<li>{tag}</li>
+				))}
+				</ul>
+				<a href={url}>View live project</a>
+				<a href={githublink}>Check out the code</a>
 			</article>
 		</main>
 		<Footer />
