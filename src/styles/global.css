@@ -1,67 +1,129 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
+
+/* Remove default margin */
+body,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
 }
-a {
-	color: #3273dc;
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
 }
-nav a {
-	margin-right: 10px;
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
 }
-textarea {
-	width: 100%;
-	font-size: 16px;
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	font-family: system-ui, sans-serif;
+	margin: auto;
+	padding: 20px;
+	max-width: 80rem;
+	word-wrap: break-word;
 }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
 input {
 	font-size: 16px;
 }
-content {
-	line-height: 1.6;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
+
 code {
 	padding: 2px 5px;
 	background-color: #f2f2f2;
 }
+
 pre {
 	padding: 1rem;
 }
-pre > code {
+
+pre>code {
 	all: unset;
 }
+
 blockquote {
 	border: 1px solid #999;
 	color: #222;
 	padding: 2px 0px 2px 20px;
 	margin: 0px;
 	font-style: italic;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+main {
+	max-width: 75ch;
+	margin-inline: auto;
+}
+
+.tags {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style-type: none;
+}
+
+.tag {
+	padding-inline: 0.6rem;
+	padding-block: 0.3rem;
+	border: 2px solid var(--secondary-bg-color, lavender);
+	border-radius: 10px;
+}
+
+
+.outline {
+	outline: red solid 1px;
 }

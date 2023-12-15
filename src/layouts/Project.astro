@@ -37,9 +37,9 @@ const { title, description, heroImage, heroAlt, tags, url, githublink } = Astro.
 				<hr />
 				<slot />
 				<hr />
-				<ul>
+				<ul class="tags">
 				{tags.map((tag) => (
-					<li>{tag}</li>
+					<li class="tag">{tag}</li>
 				))}
 				</ul>
 				<a href={url}>View live project</a>
